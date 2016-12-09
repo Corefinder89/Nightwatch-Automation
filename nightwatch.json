@@ -1,0 +1,58 @@
+{
+	"src_folders" : ["tests"],
+	"output_folder" : "reports",
+	"live_output" : true,
+
+	"selenium" : {
+		"start_process" : true,
+		"server_path" : "lib/selenium-server-standalone-3.0.0.jar",
+		"log_path" : "logs",
+		"port" : 4444,
+		"cli_args" : {
+			"webdriver.chrome.driver" : "bin/chromedriver",
+			"webdriver.gecko.driver": "bin/geckodriver"
+		}
+	},
+
+	"test_settings" : {
+		"default" : {
+			"launch_url" : "http://localhost",
+			"selenium_port" : 4444,
+			"selenium_host" : "localhost",
+			"silent" : true,
+			"screenshots" : {
+				"enabled" : true,
+				"path" : "screenshots"
+			},
+			"desiredCapabilities" : {
+				"browserName" : "firefox",
+				"marionette" : "true",
+				"javascriptEnabled": true,
+        		"acceptSslCerts": true
+			},
+			"acceptSslCerts" : false
+		},
+
+		"chrome" : {
+			"desiredCapabilities" : {
+				"browserName" : "chrome",
+				"javascriptEnabled" : true,
+				"acceptSslCerts" : true,
+				"chromeOptions" : {
+					"args" : ["--ignore-ssl-errors=true", "start-maximized", "test-type"]
+				}
+			}
+		},
+
+		"phantomjs" : {
+			"desiredCapabilities" : {
+				"browserName" : "phantomjs",
+				"javascriptEnabled" : true,
+				"acceptSslCerts" : true,
+				"phantomjs.binary.path" : "bin/phantomjs/bin/phantomjs",
+				"phantomjs.cli.args" : "--ignore-ssl-errors=true",
+				"phantomjs.page.settings.userAgent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+			}
+		}
+	} 
+}
