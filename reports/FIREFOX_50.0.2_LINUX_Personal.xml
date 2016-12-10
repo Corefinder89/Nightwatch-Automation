@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="1"
-            tests="2">
+            failures="0"
+            tests="3">
 
   <testsuite name="Personal"
-    errors="0" failures="1" hostname="" id="" package="Personal" skipped="0"
-    tests="2" time="24.89" timestamp="Sat, 10 Dec 2016 07:10:31 GMT">
+    errors="0" failures="0" hostname="" id="" package="Personal" skipped="0"
+    tests="3" time="22.21" timestamp="Sat, 10 Dec 2016 09:05:57 GMT">
   
-    <testcase name="Check for presence of body and title of Personal page" time="24.36" assertions="2">
+    <testcase name="Check for presence of body and title of Personal page" time="19.69" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Check for text in the big tabs region" time="0.5320" assertions="1">  <failure message="Testing if element &lt;nav.big-tabs&gt; contains text: &quot;ABCD&quot;.">    at Object.module.exports.Check for text in the big tabs region (/home/pg0005e4/git_repos/Nightwatch/tests/Personal.js:11:11)</failure>
+    <testcase name="Verify the urls in the header region" time="1.228" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Check for text in the big tabs region" time="1.289" assertions="2">
+
+    
 
     
     </testcase>

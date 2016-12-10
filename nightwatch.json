@@ -31,7 +31,8 @@
 				"javascriptEnabled": true,
         		"acceptSslCerts": true
 			},
-			"acceptSslCerts" : false
+			"acceptSslCerts" : false,
+			"use_xpath" : false
 		},
 
 		"chrome" : {
