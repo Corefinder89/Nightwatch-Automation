@@ -40,8 +40,17 @@ module.exports = {
 	},
 
 	'Insurance section' : function(browser){
+		browser.url("http://stage.cgu.iagdev.net/personal")
 		browser.useXpath().expect.element("//section[5]/div[@class='container']").to.be.visible
 		browser.useXpath().assert.containsText("//section[5]/div[@class='container']/div/div/h3[contains(text(),'What insurance is right for you?')]","WHAT INSURANCE IS RIGHT FOR YOU?")
+		browser.useXpath().expect.element("//div[@id='edit_insurance_type_chosen']").to.be.visible
+		browser.useXpath().expect.element("//input[@id='edit-adviser-location']").to.be.visible
+		browser.useCss().expect.element('button.submit').to.be.visible
+		browser.useCss().expect.element('div.make-a-claim h4').to.be.visible
+		browser.useCss().click('div.make-a-claim ul li:nth-child(1)')
+		browser.useCss().waitForElementVisible('div.container div:nth-child(4) h1',5000)
+		browser.useCss().assert.title('Insurance Claims - Lodge A Claim Online | CGU Insurance')
+		browser.useCss().assert.containsText('div.container div:nth-child(4) h1','INSURANCE CLAIMS')
 		browser.end()
 	}
 }
