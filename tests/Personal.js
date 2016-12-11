@@ -23,15 +23,20 @@ module.exports = {
 	},
 
 	'Check for text in the big tabs region' : function(browser){
-		browser
-		 .useCss()
-		 .assert.containsText('nav.big-tabs','OUR INSURANCE PRODUCTS')
-		 .assert.containsText('nav.big-tabs','LEARN ABOUT INSURANCE')	
+		 browser.useXpath().assert.containsText("//nav[@class='big-tabs']/ul/li/a/h2[contains(text(),'Our insurance products')]",'OUR INSURANCE PRODUCTS')
+		 browser.useXpath().assert.containsText("//nav[@class='big-tabs']/ul/li/a/h2[contains(text(),'Learn about insurance')]",'LEARN ABOUT INSURANCE')
 	},
 
 	'Validate the components of the product section' : function(browser){
+		browser.useCss()
 		browser.expect.element('div.container div').to.be.visible
-		browser.expect.element('div.xs-accordian div:nth-child(1) a').to.have.attribute('href').which.contains('http://stage.cgu.iagdev.net/personal/products/car-insurance')
+		browser.expect.element('div.xs-accordian div:nth-child(1) div.backface a').to.have.attribute('href').which.contains('http://stage.cgu.iagdev.net/personal/products/car-insurance')
+		browser.expect.element('div.xs-accordian div:nth-child(2) div.backface a').to.have.attribute('href').which.contains('http://stage.cgu.iagdev.net/personal/products/home-insurance')
+		browser.expect.element('div.xs-accordian div:nth-child(3) div.backface a').to.have.attribute('href').which.contains('http://stage.cgu.iagdev.net/personal/products/boat-insurance')
+		browser.expect.element('div.xs-accordian div:nth-child(4) div.backface a').to.have.attribute('href').which.contains('http://stage.cgu.iagdev.net/personal/products/travel-insurance')
+		browser.expect.element('div.xs-accordian div:nth-child(5) div.backface a').to.have.attribute('href').which.contains('http://stage.cgu.iagdev.net/personal/products/residential-strata-insurance')
+		browser.expect.element('div.xs-accordian div:nth-child(5) div:nth-child(2) div.backface a').to.have.attribute('href').which.contains('http://stage.cgu.iagdev.net/personal/products/caravan-insurance')
+		browser.expect.element('div.xs-accordian div:nth-child(6) div.backface a').to.have.attribute('href').which.contains('http://stage.cgu.iagdev.net/personal/products/life-insurance')
 		browser.end()
 	}
 }

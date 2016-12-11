@@ -5,16 +5,16 @@
 
   <testsuite name="Personal"
     errors="0" failures="0" hostname="" id="" package="Personal" skipped="0"
-    tests="4" time="26.25" timestamp="Sun, 11 Dec 2016 05:23:24 GMT">
+    tests="4" time="69.26" timestamp="Sun, 11 Dec 2016 06:51:47 GMT">
   
-    <testcase name="Check for presence of body and title of Personal page" time="22.50" assertions="2">
+    <testcase name="Check for presence of body and title of Personal page" time="65.36" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Verify the urls in the header region" time="1.224" assertions="5">
+    <testcase name="Verify the urls in the header region" time="1.255" assertions="5">
 
     
 
@@ -27,14 +27,26 @@
     
     </testcase>
   
-    <testcase name="Check for text in the big tabs region" time="1.119" assertions="2">
+    <testcase name="Check for text in the big tabs region" time="1.081" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Validate the components of the product section" time="1.401" assertions="2">
+    <testcase name="Validate the components of the product section" time="1.569" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 
