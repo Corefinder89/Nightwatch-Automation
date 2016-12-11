@@ -32,7 +32,7 @@
         		"acceptSslCerts": true
 			},
 			"acceptSslCerts" : false,
-			"use_xpath" : false
+			"use_xpath" : true
 		},
 
 		"chrome" : {
