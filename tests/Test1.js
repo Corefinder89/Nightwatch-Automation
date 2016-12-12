@@ -6,11 +6,9 @@ module.exports = {
 	},
 
 	'Title and Body section' : function(browser){
-		browser
-		 .useCss()
-		 .url('http://stage.cgu.iagdev.net/personal')
-		 .waitForElementVisible('body',2000)
-		 .assert.title('Personal Insurance - Make A Claim Online | CGU Insurance')
+		 browser.url('http://stage.cgu.iagdev.net/personal')
+		 browser.useCss().waitForElementVisible('body',2000)
+		 browser.assert.title('Personal Insurance - Make A Claim Online | CGU Insurance')
 	},
 
 	'Header sectiom' : function(browser){
@@ -51,6 +49,82 @@ module.exports = {
 		browser.useCss().expect.element('div.make-a-claim ul li:nth-child(1)').to.be.visible
 		browser.useCss().expect.element('div.make-a-claim ul li:nth-child(2)').to.be.visible
 		browser.useCss().expect.element('div.make-a-claim ul li:nth-child(3)').to.be.visible
+	},
+
+	'Insurance section: Insurance Claims' : function(browser){
+		browser.useCss().click('div.make-a-claim ul li:nth-child(1)')
+		browser.pause(5000)
+		browser.assert.title('Insurance Claims - Lodge A Claim Online | CGU Insurance')
+		browser.useCss().assert.containsText('header#content div.container div div:nth-child(4) h1','INSURANCE CLAIMS')
+		browser.useCss().click('div.site-header img.cgu-logo')
+		browser.pause(5000)
+	},
+
+	'Insurance section: Making a claim' : function(browser){
+		browser.useCss().click('div.make-a-claim ul li:nth-child(2)')
+		browser.pause(5000)
+		browser.assert.title('Insurance Claims Process - How to Make a Claim | CGU Insurance')
+		browser.useCss().assert.containsText('header#content div.container div div:nth-child(4) h1','MAKING A CLAIM')
+		browser.useCss().click('div.site-header img.cgu-logo')
+		browser.pause(5000)	
+	},
+
+	'Insurance section: Claims FAQ' : function(browser){
+		browser.useCss().click('div.make-a-claim ul li:nth-child(3)')
+		browser.pause(5000)
+		browser.assert.title('Claims FAQs - Personal Insurance | CGU Insurance')
+		browser.useCss().assert.containsText('header#content div.container div div:nth-child(4) h1','CLAIMS FAQ')
+		browser.useCss().click('div.site-header img.cgu-logo')
+		browser.pause(5000)	
+	},
+
+	'Learn about personal insurance' : function(browser){
+		browser.useCss().expect.element('div.container div.learn-about-insurance').to.be.visible
+		browser.useCss().assert.containsText('div.container div.learn-about-insurance h4','LEARN ABOUT PERSONAL INSURANCE')
+		browser.useCss().click('div.container div.learn-about-insurance div.call-to-action a')
+		browser.pause(5000)
+		browser.useCss().assert.containsText('div.container div:nth-child(4) h1','LEARN ABOUT INSURANCE')
+		browser.useCss().click('div.site-header img.cgu-logo')
+		browser.pause(5000)
+	},
+
+	'We will help you see it through' : function(browser){
+		browser.useCss().expect.element('div.well-help-you-see-it-through').to.be.visible
+		browser.useCss().assert.containsText('div.well-help-you-see-it-through h4',"WE’LL HELP YOU SEE IT THROUGH")
+		browser.useCss().expect.element('div.well-help-you-see-it-through ul li:nth-child(1) a').to.be.visible
+		browser.useCss().expect.element('div.well-help-you-see-it-through ul li:nth-child(2) a').to.be.visible
+		browser.useCss().expect.element('div.well-help-you-see-it-through ul li:nth-child(3) a').to.be.visible
+	},
+
+	'We will help you see it through: Request a certificate of currency' : function(browser){
+		browser.useCss().click('div.well-help-you-see-it-through ul li:nth-child(1)')
+		browser.pause(5000)
+		browser.assert.title('Request Certificate of Currency | CGU Insurance')
+		browser.useCss().assert.containsText('div.container div:nth-child(4) h1','REQUEST CERTIFICATE OF CURRENCY')
+		browser.useCss().click('div.site-header img.cgu-logo')
+		browser.pause(5000)
+	},
+
+	'We will help you see it through: Update your details' : function(browser){
+		browser.useCss().click('div.well-help-you-see-it-through ul li:nth-child(2)')
+		browser.pause(5000)
+		browser.assert.title('Update Policy Details | CGU Insurance')
+		browser.assert.containsText('div.container div:nth-child(4) h1','UPDATE POLICY DETAILS')
+		browser.useCss().click('div.site-header img.cgu-logo')
+		browser.pause(5000)
+	},
+
+	'We will help you see it through: Contact us' : function(browser){
+		browser.useCss().click('div.well-help-you-see-it-through ul li:nth-child(3)')
+		browser.pause(5000)
+		browser.assert.title('Contact | CGU Insurance')
+		browser.assert.containsText('div.container div:nth-child(4) h1','CONTACT')
+		browser.useCss().click('div.site-header img.cgu-logo')
+	},
+
+	"News Website Feature" : function(browser){
+		browser.useCss().assert.containsText("//h3[contains(text(),'NEW WEBSITE FEATURE')]",'NEW WEBSITE FEATURE')
+		browser.useCss().assert.containsText("//h3[contains(text(),'LATEST NEWS')]","LATEST NEWS")
 		browser.end()
 	}
 }
