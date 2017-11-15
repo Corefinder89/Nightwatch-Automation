@@ -6,7 +6,7 @@ module.exports = {
 	},
 
 	'Title and Body section' : function(browser){
-		 browser.url('http://stage.cgu.iagdev.net/personal')
+		 browser.url('<url>')
 		 browser.useCss().waitForElementVisible('body',2000)
 		 browser.assert.title('Personal Insurance - Make A Claim Online | CGU Insurance')
 	},
